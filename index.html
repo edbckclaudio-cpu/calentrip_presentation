@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalenTrip | Sua Viagem Organizada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #007AFF;
+            --dark: #0A0A0B;
+            --gray: #636366;
+            --light-bg: #F2F2F7;
+            --card-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .header-brand img {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-brand span {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 80px 5% 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #0A0A0B 0%, #007AFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .btn-google-play {
+            background: #000;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-google-play:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+
+        /* --- Feature Grid --- */
+        .grid-container {
+            padding: 60px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 32px;
+            transition: 0.3s;
+        }
+
+        .card:hover { background: #fff; box-shadow: var(--card-shadow); }
+
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
+
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+
+        /* --- Showcase Section (Screenshots) --- */
+        .showcase {
+            padding: 100px 5%;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .showcase h2 { font-size: 2.5rem; margin-bottom: 50px; }
+
+        .scroller {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding-bottom: 40px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .scroller::-webkit-scrollbar { display: none; }
+
+        .screen-item {
+            flex: 0 0 280px;
+            scroll-snap-align: center;
+            text-align: center;
+        }
+
+        .screen-item img {
+            width: 100%;
+            border-radius: 36px;
+            border: 6px solid #1c1c1e;
+            margin-bottom: 20px;
+        }
+
+        .screen-item p { font-weight: 600; color: #fff; font-size: 1.1rem; }
+        .screen-item span { color: #8e8e93; font-size: 0.9rem; }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 5%;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="header-brand">
+        <img src="img/logo.png" alt="Ícone CalenTrip">
+        <span>CalenTrip</span>
+    </a>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Sua jornada completa,<br>organizada e offline.</h1>
+        <p>Pare de procurar e-mails de confirmação. Tenha localizadores, e-tickets, endereços e o link direto para o Uber centralizados no motor mais vital do seu planejamento.</p>
+        <a href="https://play.google.com/store/apps/details?id=digital.calentrip.android" class="btn-google-play" target="_blank">
+            <i class="fab fa-google-play"></i>
+            <span>Baixar na Play Store</span>
+        </a>
+    </section>
+
+    <section class="grid-container">
+        <div class="card">
+            <i class="fas fa-passport"></i>
+            <h3>Logística na Mão</h3>
+            <p>E-tickets e códigos de reserva sempre disponíveis. Acesse seus dados de voo instantaneamente, sem depender de sinal de internet.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-route"></i>
+            <h3>Do Pouso ao Check-in</h3>
+            <p>O CalenTrip integra o endereço da sua hospedagem com o Uber. Um clique e seu transporte está a caminho do destino correto.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-stream"></i>
+            <h3>Cronograma Vital</h3>
+            <p>Visualize todos os seus passeios e atrações em uma lista cronológica perfeita. Saiba onde estar e a que horas, sem esforço.</p>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <h2>Sua Viagem Visualmente Organizada</h2>
+        <div class="scroller">
+            
+            <div class="screen-item">
+                <img src="img/calendario_lista.png" alt="Calendário em Lista">
+                <p>O Coração do App</p>
+                <span>Sua linha do tempo de viagem</span>
+            </div>
+
+            <div class="screen-item">
+                <img src="img/login_google.png" alt="Login Seguro">
+                <p>Acesso Rápido</p>
+                <span>Login nativo com sua conta Google</span>
+            </div>
+
+            <div class="screen-item">
+                <img src="img/uber_mapa.png" alt="Integração Uber">
+                <p>Mobilidade Total</p>
+                <span>Conexão direta com Uber e Mapas</span>
+            </div>
+
+            <div class="screen-item">
+                <img src="img/premium_checkout.png" alt="Checkout Premium">
+                <p>Experiência Pro</p>
+                <span>Recursos ilimitados para grandes viajantes</span>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p><strong>CalenTrip</strong> - O futuro do planejamento de viagens.</p>
+    <p style="margin-top: 10px; color: #888;">© 2026 CalenTrip Android Project.</p>
+</footer>
+
+</body>
+</html>
